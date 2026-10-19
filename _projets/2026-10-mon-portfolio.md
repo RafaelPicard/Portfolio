@@ -28,7 +28,7 @@ J’ai réalisé ce projet individuellement dans le cadre de ma formation en BTS
 
 ## Productions et preuves
 
-- L'adresse publique du site.
+- https://rafaelpicard.github.io/Portfolio/
 - Le dépôt et son historique des modifications.
 - Le score d'accessibilité relevé.
 
