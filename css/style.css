@@ -1,45 +1,218 @@
-/* Mise en forme du portfolio. Changez la couleur --accent pour donner
-   votre teinte au site ; le reste suit. */
+
+/* ======================================
+   RAFAEL PICARD — CYBER PORTFOLIO
+   ====================================== */
+
 :root {
-  --encre: #1d2630;
-  --accent: #0a5c8c;
-  --fond: #fbfbf9;
-  --trait: #d5dbe1;
-  --doux: #5b6672;
+  color-scheme: dark;
+  --bg: #080d18;
+  --surface: #111827;
+  --surface-hover: #172338;
+  --text: #e8f0fc;
+  --muted: #94a3b8;
+  --accent: #36e4ff;
+  --border: rgba(148, 163, 184, 0.18);
 }
-* { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 30px;
+}
+
 body {
   margin: 0;
-  background: var(--fond);
-  color: var(--encre);
-  font: 17px/1.6 Georgia, "Times New Roman", serif;
+  background:
+    radial-gradient(ellipse at 80% 0%, #102b46 0, transparent 38%),
+    var(--bg);
+  color: var(--text);
+  font-family: Inter, "Segoe UI", sans-serif;
+  line-height: 1.75;
+  letter-spacing: 0.01em;
 }
-header, main, footer { max-width: 46rem; margin: 0 auto; padding: 0 1rem; }
-header { padding-top: 1.6rem; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: .5rem 1.5rem; }
-.site { margin: 0; font: bold 1.05rem Calibri, Arial, sans-serif; }
-.site a { color: var(--encre); text-decoration: none; }
-nav ul { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: .3rem 1.2rem; font-family: Calibri, Arial, sans-serif; }
-h1, h2, h3 { font-family: Calibri, Arial, sans-serif; line-height: 1.25; }
-h1 { font-size: 2rem; margin: 2rem 0 0; }
-h2 { font-size: 1.35rem; margin-top: 2.2rem; border-bottom: 1px solid var(--trait); padding-bottom: .3rem; }
-a { color: var(--accent); }
-a:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
-.sous-titre, .meta { color: var(--doux); margin: .3rem 0 0; }
-.meta { font-size: .85rem; }
-.carte { border: 1px solid var(--trait); background: #fff; padding: .8rem 1rem; margin: 1rem 0; }
-.carte h3 { margin: 0 0 .2rem; }
-.carte p { margin: .2rem 0; }
-.comp-liste { font-size: .9rem; }
-.comp { display: inline-block; border: 1px solid var(--trait); padding: 0 .4rem; margin: .15rem .3rem .15rem 0; background: #fff; }
-.defile { overflow-x: auto; }
-table { border-collapse: collapse; width: 100%; font-size: .9rem; }
-th, td { border: 1px solid var(--trait); padding: .4rem .55rem; text-align: left; vertical-align: top; }
-th { background: #eef2f5; font-family: Calibri, Arial, sans-serif; }
-td.case { text-align: center; font-weight: bold; min-width: 2.4rem; }
-img { max-width: 100%; height: auto; border: 1px solid var(--trait); }
-code { font-size: .9em; background: #eef2f5; padding: 0 .25rem; }
-footer { margin-top: 3rem; padding-bottom: 2rem; font-size: .85rem; color: var(--doux); border-top: 1px solid var(--trait); }
-@media (max-width: 520px) {
-  body { font-size: 16px; }
-  h1 { font-size: 1.6rem; }
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0.12;
+  background-image:
+    linear-gradient(rgba(54, 228, 255, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(54, 228, 255, 0.08) 1px, transparent 1px);
+  background-size: 42px 42px;
+}
+
+::selection {
+  background: var(--accent);
+  color: #080d18;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+  transition: color 180ms ease;
+}
+
+a:hover {
+  color: white;
+}
+
+h1 {
+  font-size: clamp(2.5rem, 7vw, 5rem);
+  line-height: 1.08;
+  letter-spacing: -0.055em;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  text-wrap: balance;
+}
+
+h2 {
+  font-size: clamp(1.6rem, 4vw, 2.4rem);
+  line-height: 1.2;
+  letter-spacing: -0.035em;
+  margin-top: 4rem;
+  margin-bottom: 1.5rem;
+}
+
+h2::before {
+  content: "// ";
+  color: var(--accent);
+  font-family: monospace;
+}
+
+h3 {
+  line-height: 1.35;
+}
+
+p {
+  color: #c4d0e0;
+}
+
+.sous-titre {
+  color: var(--accent);
+  font-size: clamp(1rem, 2vw, 1.3rem);
+  max-width: 680px;
+}
+
+.carte {
+  position: relative;
+  padding: clamp(1.2rem, 3vw, 2rem);
+  margin: 1.25rem 0;
+  overflow: hidden;
+  background: linear-gradient(
+    135deg,
+    rgba(17, 24, 39, 0.96),
+    rgba(11, 20, 35, 0.9)
+  );
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  transition:
+    transform 220ms ease,
+    border-color 220ms ease,
+    background 220ms ease;
+}
+
+.carte::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: var(--accent);
+  opacity: 0.65;
+}
+
+.carte:hover {
+  transform: translateY(-4px);
+  border-color: rgba(54, 228, 255, 0.55);
+  background: var(--surface-hover);
+}
+
+.carte h3 {
+  margin-top: 0;
+  font-size: 1.3rem;
+}
+
+.meta {
+  color: var(--muted);
+  font-size: 0.88rem;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--surface);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+th,
+td {
+  padding: 0.9rem 1rem;
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+}
+
+thead th {
+  color: var(--accent);
+  background: #152236;
+}
+
+tbody th {
+  font-weight: 500;
+}
+
+tbody tr:hover {
+  background: rgba(54, 228, 255, 0.05);
+}
+
+.case {
+  color: var(--accent);
+  text-align: center;
+  font-weight: 800;
+}
+
+.defile {
+  max-width: 100%;
+  overflow-x: auto;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+}
+
+@media (max-width: 600px) {
+  h2 {
+    margin-top: 3rem;
+  }
+
+  .carte {
+    border-radius: 14px;
+  }
+
+  th,
+  td {
+    padding: 0.7rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
 }
