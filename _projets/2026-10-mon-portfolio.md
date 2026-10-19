@@ -8,7 +8,7 @@ competences: [c3, c6]
 
 ## Contexte
 
-Pour l'épreuve E5 et pour ma recherche de stage, j'ai besoin d'une adresse unique qui présente mes réalisations et que je complète au fil de l'année.
+Dans le cadre de ma première année de BTS SIO, option SISR, j’ai réalisé un portfolio professionnel afin de présenter mes compétences, mes projets et les travaux effectués pendant ma formation. Ce site a pour objectif de montrer mon évolution dans le domaine des systèmes et des réseaux, et de permettre à un jury d’examen ou à un recruteur de consulter mes réalisations.
 
 ## Conditions et moyens
 
