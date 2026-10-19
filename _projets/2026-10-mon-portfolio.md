@@ -34,4 +34,4 @@ J’ai réalisé ce projet individuellement dans le cadre de ma formation en BTS
 
 ## Ce que j'en retiens
 
-Remplacez cette phrase par une difficulté rencontrée et la façon dont vous l'avez réglée.
+Ce projet m'a permis de découvrir comment publier un site web avec GitHub Pages et de personnaliser un portfolio professionnel. J'ai appris à modifier les fichiers du site et à vérifier que mes changements étaient bien publiés. Je pourrai maintenant enrichir progressivement mon portfolio avec les projets réalisés pendant mon BTS SIO, option SISR.
